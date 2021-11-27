@@ -24,3 +24,5 @@ Download - Windows Installer - Composer-Setup.exe <br>
 ```cd public/```
 ```php -S localhost:8000```
 
+##### Introdução as Rotas, Controllers e Views
+```composer create-project --prefer-dist laravel/laravel app_super_gestao "7.0.0"```
