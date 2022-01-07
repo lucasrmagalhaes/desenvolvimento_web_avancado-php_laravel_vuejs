@@ -42,8 +42,7 @@ Organização das Rotas no Laravel: <br>
 - Console; e
 - Web.
 
+```php artisan route:list```
 
 ##### Controllers
-```
-php artisan make:controller PrincipalController
-```
+```php artisan make:controller PrincipalController```

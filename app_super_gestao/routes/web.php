@@ -23,6 +23,11 @@ Route::get('/contato/{nome}/{categoria_id}',
     }
 )->where('categoria_id', '[0-9]+')->where('nome', '[A-Za-z]+');
 
+Route::get('/login', function() { return 'Login'; });
+Route::get('/clientes', function() { return 'Clientes'; });
+Route::get('/fornecedores', function() { return 'Fornecedores'; });
+Route::get('/produtos', function() { return 'Produtos'; });
+
 /* verbo http
 
 get
