@@ -11,17 +11,22 @@ php.ini-development renomear para php.ini (Ambiente de Desenvolvimento)<br><br>
 [Composer](https://getcomposer.org/) <br>
 Download - Windows Installer - Composer-Setup.exe <br>
 ```composer --version``` 
+
 ```composer self-update```
 
 [Laravel](https://laravel.com) <br>
 Configuração para buscar os pacotes no packagist:
 ```composer config -g repo.packagist composer https://packagist.org```
+
 Configuração GitHub:
 ```composer config -g github-protocols https ssh```
+
 Forçando a instalação do Laravel 7.0.:
 ```composer create-project --prefer-dist laravel/laravel projeto_laravel_via_composer "7.0"```
+
 Localhost:
 ```cd public/```
+
 ```php -S localhost:8000```
 
 ##### Introdução as Rotas, Controllers e Views
