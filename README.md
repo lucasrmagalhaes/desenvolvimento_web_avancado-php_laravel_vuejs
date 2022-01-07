@@ -36,3 +36,9 @@ Organização das Rotas no Laravel: <br>
 - Channels;
 - Console; e
 - Web.
+
+
+##### Controllers
+```
+php artisan make:controller PrincipalController
+```
