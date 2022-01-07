@@ -31,8 +31,11 @@ Localhost:
 
 ##### Introdução as Rotas, Controllers e Views
 ```composer create-project --prefer-dist laravel/laravel app_super_gestao "7.0.0"```
+
 ```php artisan list```
+
 ```php artisan -V```
+
 ```php artisan serve```
 
 ##### Rotas
@@ -46,3 +49,5 @@ Organização das Rotas no Laravel: <br>
 
 ##### Controllers
 ```php artisan make:controller PrincipalController```
+
+```php artisan make:controller TesteController```
