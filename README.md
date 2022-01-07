@@ -14,13 +14,13 @@ Download - Windows Installer - Composer-Setup.exe <br>
 ```composer self-update```
 
 [Laravel](https://laravel.com) <br>
-- Configuração para buscar os pacotes no packagist:
+Configuração para buscar os pacotes no packagist:
 ```composer config -g repo.packagist composer https://packagist.org```
-- Configuração GitHub:
+Configuração GitHub:
 ```composer config -g github-protocols https ssh```
-- Forçando a instalação do Laravel 7.0.:
+Forçando a instalação do Laravel 7.0.:
 ```composer create-project --prefer-dist laravel/laravel projeto_laravel_via_composer "7.0"```
-- Localhost:
+Localhost:
 ```cd public/```
 ```php -S localhost:8000```
 
@@ -28,3 +28,11 @@ Download - Windows Installer - Composer-Setup.exe <br>
 ```composer create-project --prefer-dist laravel/laravel app_super_gestao "7.0.0"```
 ```php artisan list```
 ```php artisan -V```
+```php artisan serve```
+
+##### Rotas
+Organização das Rotas no Laravel: <br>
+- API;
+- Channels;
+- Console; e
+- Web.
