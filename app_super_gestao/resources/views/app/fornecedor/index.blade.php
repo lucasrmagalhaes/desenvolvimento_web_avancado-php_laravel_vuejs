@@ -23,35 +23,57 @@
 
     }
     */
+
+    /*
+    if(isset($variavel)) {} // retorna true se a variável estiver definida
+    */
 @endphp
 
 {{-- Sintaxe do blade não precisa ; --}}
-{{-- @dd($fornecedores) --}}
+
+{{-- @dd($fornecedores1) --}}
 
 {{-- if | elseif | else | endif --}}
-{{-- @if(count($fornecedores) > 0 && count($fornecedores) < 10)
+@if(count($fornecedores1) > 0 && count($fornecedores1) < 10)
     <h3>Existem alguns fornecedores cadastrados</h3>
-@elseif(count($fornecedores) > 10)
+@elseif(count($fornecedores1) > 10)
     <h3>Existem vários fornecedores cadastrados</h3>
 @else
     <h3>Ainda não existem fornecedores cadastrados</h3>
-@endif --}}
+@endif
 
 {{-- @unless executa se o retorno for false --}}
-Fornecedor: {{ $fornecedores[0]['nome'] }}
+Fornecedor: {{ $fornecedores2[0]['nome'] }}
 
 <br>
 
-Status: {{ $fornecedores[0]['status'] }}
+Status: {{ $fornecedores2[0]['status'] }}
 
 <br>
 
-@if(!($fornecedores[0]['status'] == 'S'))
+@if(!($fornecedores2[0]['status'] == 'S'))
     Fornecedor inativo
 @endif
 
 <br>
 
-@unless($fornecedores[0]['status'] == 'S') <!-- se o retorno da condição for false -->
+@unless($fornecedores2[0]['status'] == 'S') <!-- se o retorno da condição for false -->
     Fornecedor inativo
 @endunless
+
+<br><br>
+
+{{-- @isset | @endisset --}}
+@isset($fornecedores2)
+    Fornecedor: {{ $fornecedores2[1]['nome'] }}
+    
+    <br>
+    
+    Status: {{ $fornecedores2[1]['status'] }}
+    
+    <br>
+    
+    @isset($fornecedores2[1]['cnpj'])
+        CNPJ: {{ $fornecedores2[1]['cnpj'] }}
+    @endisset
+@endisset
