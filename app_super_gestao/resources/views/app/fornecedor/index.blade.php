@@ -116,10 +116,9 @@ Status: {{ $fornecedores2[0]['status'] }}
     <br><br>
 @endisset
 
+<h3>Operador condicional de valor default (??)</h3>
 {{-- Operador condicional de valor default (??) --}}
 @isset($fornecedores3) 
-    <h3>Operador condicional de valor default (??)</h3>
-
     CNPJ: {{ $fornecedores3[1]['cnpj'] ?? 'Dado não foi preenchido' }}
 
     <br><br>
@@ -129,4 +128,32 @@ Status: {{ $fornecedores2[0]['status'] }}
         ou
         $variavel testada possuir o valor null
     -->
+@endisset
+
+<h3>Switch/case</h3>
+{{-- Switch/case --}}
+@isset($fornecedores4)
+    Fornecedor: {{ $fornecedores4[1]['nome'] }}
+    <br>
+    Status: {{ $fornecedores4[1]['status'] }}
+    <br>
+    CNPJ: {{ $fornecedores4[1]['cnpj'] ?? '' }}
+    <br>
+    (DDD) Telefone: ({{ $fornecedores4[1]['ddd'] ?? '' }} {{ $fornecedores4[1]['telefone'] ?? '' }})
+
+    <br><br>
+
+    @switch($fornecedores4[0]['ddd'])
+        @case ('11')
+            São Paulo - SP
+            @break
+        @case ('32')
+            Juiz de Fora - MG
+            @break
+        @case ('85')
+            Fortaleza - CE
+            @break
+        @default
+            Estado não identificado
+    @endswitch
 @endisset
