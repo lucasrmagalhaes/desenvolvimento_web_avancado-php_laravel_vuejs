@@ -167,3 +167,22 @@ Status: {{ $fornecedores2[0]['status'] }}
         <hr>
     @endfor
 @endisset
+
+<br>
+
+<h3>while</h3> {{-- while --}}
+@isset($fornecedores4)
+    @php $i = 0 @endphp
+
+    @while(isset($fornecedores4[$i]))
+        Fornecedor: {{ $fornecedores4[$i]['nome'] }}
+        <br>
+        Status: {{ $fornecedores4[$i]['status'] }}
+        <br>
+        CNPJ: {{ $fornecedores4[$i]['cnpj'] ?? '' }}
+        <br>
+        (DDD) Telefone: ({{ $fornecedores4[$i]['ddd'] ?? '' }} {{ $fornecedores4[$i]['telefone'] ?? '' }})
+        <hr>
+        @php $i++ @endphp
+    @endwhile
+@endisset
