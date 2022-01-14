@@ -26,6 +26,16 @@
 
     /*
     if(isset($variavel)) {} // retorna true se a variável estiver definida
+    
+    if(empty($variavel)) {} // retorna true se a variável estiver vazia
+    - ''
+    - 0
+    - 0.0
+    - '0'
+    - null
+    - false
+    - array()
+    - $var
     */
 @endphp
 
@@ -75,5 +85,25 @@ Status: {{ $fornecedores2[0]['status'] }}
     
     @isset($fornecedores2[1]['cnpj'])
         CNPJ: {{ $fornecedores2[1]['cnpj'] }}
+    @endisset
+
+    <br>
+@endisset
+
+{{-- @empty --}}
+@isset($fornecedores3)
+    Fornecedor: {{ $fornecedores3[0]['nome'] }}
+    
+    <br>
+    
+    Status: {{ $fornecedores3[0]['status'] }}
+    
+    <br>
+    
+    @isset($fornecedores3[0]['cnpj'])
+        CNPJ: {{ $fornecedores3[0]['cnpj'] }}
+        @empty($fornecedores3[0]['cnpj'])
+            - Vazio
+        @endempty
     @endisset
 @endisset

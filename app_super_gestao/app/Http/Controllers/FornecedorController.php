@@ -22,6 +22,14 @@ class FornecedorController extends Controller
             ]
         ];
 
-        return view('app.fornecedor.index', compact('fornecedores1', 'fornecedores2'));
+        $fornecedores3 = [
+            0 => [
+                'nome' => 'Fornecedor 1', 
+                'status' => 'N', 
+                'cnpj' => ''
+            ]
+        ];
+
+        return view('app.fornecedor.index', compact('fornecedores1', 'fornecedores2', 'fornecedores3'));
     }
 }
