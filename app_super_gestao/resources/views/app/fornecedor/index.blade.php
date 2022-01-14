@@ -45,8 +45,7 @@
 
 {{-- @dd($fornecedores1) --}}
 
-<h3>if | elseif | else | endif</h3>
-{{-- if | elseif | else | endif --}}
+<h3>if | elseif | else | endif</h3> {{-- if | elseif | else | endif --}}
 @if(count($fornecedores1) > 0 && count($fornecedores1) < 10)
     <h5>Existem alguns fornecedores cadastrados</h5>
 @elseif(count($fornecedores1) > 10)
@@ -55,8 +54,7 @@
     <h5>Ainda não existem fornecedores cadastrados</h5>
 @endif
 
-<h3>unless</h3>
-{{-- @unless executa se o retorno for false --}}
+<h3>unless</h3> {{-- @unless executa se o retorno for false --}}
 Fornecedor: {{ $fornecedores2[0]['nome'] }}
 
 <br>
@@ -77,8 +75,7 @@ Status: {{ $fornecedores2[0]['status'] }}
 
 <br><br>
 
-<h3>isset</h3>
-{{-- @isset | @endisset --}}
+<h3>isset</h3> {{-- @isset | @endisset --}}
 @isset($fornecedores2)
     Fornecedor: {{ $fornecedores2[1]['nome'] }}
     
@@ -95,8 +92,7 @@ Status: {{ $fornecedores2[0]['status'] }}
     <br>
 @endisset
 
-<h3>empty</h3>
-{{-- @empty --}}
+<h3>empty</h3> {{-- @empty --}}
 @isset($fornecedores3)
     Fornecedor: {{ $fornecedores3[0]['nome'] }}
     
@@ -116,8 +112,7 @@ Status: {{ $fornecedores2[0]['status'] }}
     <br><br>
 @endisset
 
-<h3>Operador condicional de valor default (??)</h3>
-{{-- Operador condicional de valor default (??) --}}
+<h3>Operador condicional de valor default (??)</h3> {{-- Operador condicional de valor default (??) --}}
 @isset($fornecedores3) 
     CNPJ: {{ $fornecedores3[1]['cnpj'] ?? 'Dado não foi preenchido' }}
 
@@ -130,8 +125,7 @@ Status: {{ $fornecedores2[0]['status'] }}
     -->
 @endisset
 
-<h3>Switch/case</h3>
-{{-- Switch/case --}}
+<h3>Switch/case</h3> {{-- Switch/case --}}
 @isset($fornecedores4)
     Fornecedor: {{ $fornecedores4[1]['nome'] }}
     <br>
@@ -156,4 +150,20 @@ Status: {{ $fornecedores2[0]['status'] }}
         @default
             Estado não identificado
     @endswitch
+@endisset
+
+<br><br>
+
+<h3>for</h3> {{-- for --}}
+@isset($fornecedores4)
+    @for($i = 0; isset($fornecedores4[$i]); $i++)
+        Fornecedor: {{ $fornecedores4[$i]['nome'] }}
+        <br>
+        Status: {{ $fornecedores4[$i]['status'] }}
+        <br>
+        CNPJ: {{ $fornecedores4[$i]['cnpj'] ?? '' }}
+        <br>
+        (DDD) Telefone: ({{ $fornecedores4[$i]['ddd'] ?? '' }} {{ $fornecedores4[$i]['telefone'] ?? '' }})
+        <hr>
+    @endfor
 @endisset
