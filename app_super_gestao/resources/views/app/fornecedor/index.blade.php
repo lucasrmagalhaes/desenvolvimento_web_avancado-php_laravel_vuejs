@@ -26,7 +26,9 @@
 
     /*
     if(isset($variavel)) {} // retorna true se a variável estiver definida
-    
+    */
+
+    /*
     if(empty($variavel)) {} // retorna true se a variável estiver vazia
     - ''
     - 0
@@ -107,3 +109,5 @@ Status: {{ $fornecedores2[0]['status'] }}
         @endempty
     @endisset
 @endisset
+
+{{-- Operador condicional ternário --}}
