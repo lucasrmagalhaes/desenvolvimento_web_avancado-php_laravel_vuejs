@@ -90,3 +90,5 @@ php artisan make:controller TesteController
 ```php
 php artisan make:controller FornecedorController
 ```
+
+##### Extensão: laravel-blade
