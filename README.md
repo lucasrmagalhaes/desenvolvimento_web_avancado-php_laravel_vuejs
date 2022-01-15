@@ -113,8 +113,19 @@ php artisan make:model Fornecedor
 ##### Executando as Migrations
 php.ini - Remover o ; ```;extension=pdo_sqlite```
 
+(UP) Mais antiga para a mais atual
 ```php
 php artisan migrate
+```
+
+(DOWN) Da mais atual para a mais antiga
+```php
+php artisan migrate:rollback
+```
+
+(DOWN) Passos - batch - step
+```php
+php artisan migrate:rollback --step=2
 ```
 
 ```php
