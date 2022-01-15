@@ -121,6 +121,10 @@ php artisan migrate
 php artisan make:migration create_fornecedores_table
 ```
 
+```php
+php artisan make:migration alter_fornecedores_novas_colunas
+```
+
 ##### SGBD MySQL
 [Download](https://dev.mysql.com/downloads/installer/) <br>
 Custom -> <br>
@@ -134,16 +138,20 @@ Windows Service -> - [] Start the MySQL Server at System Startup <br><br>
 Serviços do Windows -> MySQL80
 
 ##### Query
-```sql
+```
 CREATE DATABASE sg
 ```
 
-```sql
+```
 USE sg
 ```
 
-```sql
+```
 SELECT * FROM migrations;
+```
+
+```
+DESCRIBE fornecedores;
 ```
 
 ##### Testando o PDO
