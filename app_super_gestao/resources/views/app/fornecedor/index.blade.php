@@ -163,7 +163,7 @@ Status: {{ $fornecedores2[0]['status'] }}
         <br>
         CNPJ: {{ $fornecedores4[$i]['cnpj'] ?? '' }}
         <br>
-        (DDD) Telefone: ({{ $fornecedores4[$i]['ddd'] ?? '' }} {{ $fornecedores4[$i]['telefone'] ?? '' }})
+        (DDD) Telefone: ({{ $fornecedores4[$i]['ddd'] ?? '' }}) {{ $fornecedores4[$i]['telefone'] ?? '' }}
         <hr>
     @endfor
 @endisset
@@ -181,8 +181,22 @@ Status: {{ $fornecedores2[0]['status'] }}
         <br>
         CNPJ: {{ $fornecedores4[$i]['cnpj'] ?? '' }}
         <br>
-        (DDD) Telefone: ({{ $fornecedores4[$i]['ddd'] ?? '' }} {{ $fornecedores4[$i]['telefone'] ?? '' }})
+        (DDD) Telefone: ({{ $fornecedores4[$i]['ddd'] ?? '' }}) {{ $fornecedores4[$i]['telefone'] ?? '' }}
         <hr>
         @php $i++ @endphp
     @endwhile
+@endisset
+
+<h3>foreach</h3> {{-- foreach --}}
+@isset($fornecedores4)
+    @foreach($fornecedores4 as $indice => $fornecedor)
+        Fornecedor: {{ $fornecedor['nome'] }}
+        <br>
+        Status: {{ $fornecedor['status'] }}
+        <br>
+        CNPJ: {{ $fornecedor['cnpj'] ?? '' }}
+        <br>
+        (DDD) Telefone: ({{ $fornecedor['ddd'] ?? '' }}) {{ $fornecedor['telefone'] ?? '' }}
+        <hr>
+    @endforeach
 @endisset
