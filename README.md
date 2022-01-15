@@ -97,3 +97,6 @@ php artisan make:controller FornecedorController
 ```php
 php artisan view:clear
 ```
+
+##### csrf
+Cross-site request forgery ou falsificação de solitação entre sites
