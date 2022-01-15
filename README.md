@@ -118,6 +118,11 @@ php.ini - Remover o ; ```;extension=pdo_sqlite```
 php artisan migrate
 ```
 
+(UP) Rodar uma migration com o caminho (--path)
+```php
+php artisan migrate --path="database/migrations/2022_01_15_205953_create_produtos_table"
+```
+
 (DOWN) Da mais atual para a mais antiga
 ```php
 php artisan migrate:rollback
@@ -142,6 +147,10 @@ php artisan make:migration create_produtos_table
 
 ```php
 php artisan make:migration create_produto_detalhes_table
+```
+
+```php
+php artisan make:migration create_unidades_table
 ```
 
 signed - aceita valores negativos <br>
