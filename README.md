@@ -106,11 +106,19 @@ Cross-site request forgery ou falsificação de solitação entre sites.
 php artisan make:model SiteContato -m
 ```
 
-##### Executar as Migrations
+```php
+php artisan make:model Fornecedor
+```
+
+##### Executando as Migrations
 php.ini - Remover o ; ```;extension=pdo_sqlite```
 
 ```php
 php artisan migrate
+```
+
+```php
+php artisan make:migration create_fornecedores_table
 ```
 
 ##### SGBD MySQL
@@ -132,6 +140,10 @@ CREATE DATABASE sg
 
 ```sql
 USE sg
+```
+
+```sql
+SELECT * FROM migrations;
 ```
 
 ##### Testando o PDO
