@@ -153,6 +153,10 @@ php artisan make:migration create_produto_detalhes_table
 php artisan make:migration create_unidades_table
 ```
 
+```php
+php artisan make:migration ajuste_produtos_filiais
+```
+
 signed - aceita valores negativos <br>
 unsigned - não aceita valores negativos
 
