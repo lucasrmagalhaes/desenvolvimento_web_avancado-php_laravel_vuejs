@@ -92,3 +92,8 @@ php artisan make:controller FornecedorController
 ```
 
 ##### Extensão: laravel-blade
+
+##### Limpar as views compiladas do cache
+```php
+php artisan view:clear
+```
