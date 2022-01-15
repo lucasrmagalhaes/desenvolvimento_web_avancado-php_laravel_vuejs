@@ -136,6 +136,10 @@ php artisan make:migration create_fornecedores_table
 php artisan make:migration alter_fornecedores_novas_colunas
 ```
 
+```php
+php artisan make:migration create_produtos_table
+```
+
 ##### SGBD MySQL
 [Download](https://dev.mysql.com/downloads/installer/) <br>
 Custom -> <br>
@@ -163,6 +167,14 @@ SELECT * FROM migrations;
 
 ```
 DESCRIBE fornecedores;
+```
+
+```
+DESCRIBE site_contatos;
+```
+
+```
+DESCRIBE produtos;
 ```
 
 ##### Testando o PDO
