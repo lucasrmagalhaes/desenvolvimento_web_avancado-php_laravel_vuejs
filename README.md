@@ -113,6 +113,26 @@ php artisan make:model Fornecedor
 ##### Executando as Migrations
 php.ini - Remover o ; ```;extension=pdo_sqlite```
 
+Listagem das migrates e informa se já foi executada
+```php
+php artisan migrate:status
+```
+
+Reverte todas as migrações do banco - do mais novo para o antigo - rollback
+```php
+php artisan migrate:reset
+```
+
+Reverte todas as migrações e na sequência roda o migrate, criando um banco de dados zerado
+```php
+php artisan migrate:refresh
+```
+
+Faz o drop de todos os objetos do banco de dados + o migrate para recriar os objetos
+```php
+php artisan migrate:fresh
+```
+
 (UP) Mais antiga para a mais atual
 ```php
 php artisan migrate
