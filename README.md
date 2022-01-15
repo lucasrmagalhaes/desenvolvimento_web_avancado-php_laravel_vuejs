@@ -12,7 +12,7 @@ php --version
 <br>
 
 Adicionar o caminho do diretório PHP no path das variáveis de ambiente<br>
-php.ini-development renomear para php.ini (Ambiente de Desenvolvimento)<br><br>
+php.ini-development renomear para php.ini (Ambiente de Desenvolvimento)<br>
 
 [Composer](https://getcomposer.org/) <br>
 Download - Windows Installer - Composer-Setup.exe <br>
@@ -99,4 +99,4 @@ php artisan view:clear
 ```
 
 ##### csrf
-Cross-site request forgery ou falsificação de solitação entre sites
+Cross-site request forgery ou falsificação de solitação entre sites.
