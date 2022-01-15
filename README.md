@@ -112,3 +112,15 @@ php.ini - Remover o ; ```;extension=pdo_sqlite```
 ```php
 php artisan migrate
 ```
+
+##### SGBD MySQL
+[Download](https://dev.mysql.com/downloads/installer/) <br>
+Custom -> <br>
+MySQL Servers -> MySQL Server <br>
+Applications -> MySQL Workbench <br>
+High Availabity -> Standalone MySQL Server / Classic MySQL Replication <br>
+Type and Networking -> Config Type: Development Computer (Reserva menos memória) <br>
+Authentication Method -> RECOMMENDED <br>
+Accounts and Roles -> Definir a senha <br>
+Windows Service -> - [] Start the MySQL Server at System Startup <br><br>
+Serviços do Windows -> MySQL80
