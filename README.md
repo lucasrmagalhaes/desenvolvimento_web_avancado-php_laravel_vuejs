@@ -12,7 +12,7 @@ php --version
 <br>
 
 Adicionar o caminho do diretório PHP no path das variáveis de ambiente<br>
-php.ini-development renomear para php.ini (Ambiente de Desenvolvimento)<br><br>
+php.ini-development renomear para php.ini (Ambiente de Desenvolvimento)<br>
 
 [Composer](https://getcomposer.org/) <br>
 Download - Windows Installer - Composer-Setup.exe <br>
@@ -46,8 +46,8 @@ Localhost:
 cd public/
 ```
 
-```
-php -S localhost:8000
+```php
+php -S localhost:80
 ```
 
 ##### Introdução as Rotas, Controllers e Views
@@ -92,3 +92,11 @@ php artisan make:controller FornecedorController
 ```
 
 ##### Extensão: laravel-blade
+
+##### Limpar as views compiladas do cache
+```php
+php artisan view:clear
+```
+
+##### csrf
+Cross-site request forgery ou falsificação de solitação entre sites.

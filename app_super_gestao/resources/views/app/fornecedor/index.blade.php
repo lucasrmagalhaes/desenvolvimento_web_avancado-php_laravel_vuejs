@@ -75,7 +75,9 @@ Status: {{ $fornecedores2[0]['status'] }}
 
 <br><br>
 
-<h3>isset</h3> {{-- @isset | @endisset --}}
+{{-- @isset | @endisset --}}
+
+<h3>isset</h3> 
 @isset($fornecedores2)
     Fornecedor: {{ $fornecedores2[1]['nome'] }}
     
@@ -92,7 +94,9 @@ Status: {{ $fornecedores2[0]['status'] }}
     <br>
 @endisset
 
-<h3>empty</h3> {{-- @empty --}}
+{{-- @empty --}}
+
+<h3>empty</h3> 
 @isset($fornecedores3)
     Fornecedor: {{ $fornecedores3[0]['nome'] }}
     
@@ -112,7 +116,9 @@ Status: {{ $fornecedores2[0]['status'] }}
     <br><br>
 @endisset
 
-<h3>Operador condicional de valor default (??)</h3> {{-- Operador condicional de valor default (??) --}}
+{{-- Operador condicional de valor default (??) --}}
+
+<h3>Operador condicional de valor default (??)</h3> 
 @isset($fornecedores3) 
     CNPJ: {{ $fornecedores3[1]['cnpj'] ?? 'Dado não foi preenchido' }}
 
@@ -125,7 +131,9 @@ Status: {{ $fornecedores2[0]['status'] }}
     -->
 @endisset
 
-<h3>Switch/case</h3> {{-- Switch/case --}}
+{{-- Switch/case --}}
+
+<h3>Switch/case</h3> 
 @isset($fornecedores4)
     Fornecedor: {{ $fornecedores4[1]['nome'] }}
     <br>
@@ -152,9 +160,11 @@ Status: {{ $fornecedores2[0]['status'] }}
     @endswitch
 @endisset
 
-<br><br>
+<br>
 
-<h3>for</h3> {{-- for --}}
+{{-- for --}}
+
+<h3>for</h3> 
 @isset($fornecedores4)
     @for($i = 0; isset($fornecedores4[$i]); $i++)
         Fornecedor: {{ $fornecedores4[$i]['nome'] }}
@@ -163,14 +173,14 @@ Status: {{ $fornecedores2[0]['status'] }}
         <br>
         CNPJ: {{ $fornecedores4[$i]['cnpj'] ?? '' }}
         <br>
-        (DDD) Telefone: ({{ $fornecedores4[$i]['ddd'] ?? '' }} {{ $fornecedores4[$i]['telefone'] ?? '' }})
+        (DDD) Telefone: ({{ $fornecedores4[$i]['ddd'] ?? '' }}) {{ $fornecedores4[$i]['telefone'] ?? '' }}
         <hr>
     @endfor
 @endisset
 
-<br>
+{{-- while --}}
 
-<h3>while</h3> {{-- while --}}
+<h3>while</h3> 
 @isset($fornecedores4)
     @php $i = 0 @endphp
 
@@ -181,8 +191,98 @@ Status: {{ $fornecedores2[0]['status'] }}
         <br>
         CNPJ: {{ $fornecedores4[$i]['cnpj'] ?? '' }}
         <br>
-        (DDD) Telefone: ({{ $fornecedores4[$i]['ddd'] ?? '' }} {{ $fornecedores4[$i]['telefone'] ?? '' }})
+        (DDD) Telefone: ({{ $fornecedores4[$i]['ddd'] ?? '' }}) {{ $fornecedores4[$i]['telefone'] ?? '' }}
         <hr>
         @php $i++ @endphp
     @endwhile
+@endisset
+
+{{-- foreach --}}
+
+<h3>foreach</h3> 
+@isset($fornecedores4)
+    @foreach($fornecedores4 as $indice => $fornecedor)
+        Fornecedor: {{ $fornecedor['nome'] }}
+        <br>
+        Status: {{ $fornecedor['status'] }}
+        <br>
+        CNPJ: {{ $fornecedor['cnpj'] ?? '' }}
+        <br>
+        (DDD) Telefone: ({{ $fornecedor['ddd'] ?? '' }}) {{ $fornecedor['telefone'] ?? '' }}
+        <hr>
+    @endforeach
+@endisset
+
+{{-- forelse --}}
+
+<h3>forelse</h3>
+@isset($fornecedores5)
+    @forelse($fornecedores5 as $indice => $fornecedor)
+        Fornecedor: {{ $fornecedor['nome'] }}
+        <br>
+        Status: {{ $fornecedor['status'] }}
+        <br>
+        CNPJ: {{ $fornecedor['cnpj'] ?? '' }}
+        <br>
+        (DDD) Telefone: ({{ $fornecedor['ddd'] ?? '' }}) {{ $fornecedor['telefone'] ?? '' }}
+        <hr>
+    @empty
+        Não existem fornecedores cadastrados!
+    @endforelse
+@endisset
+
+{{-- Tag de Impressão do Blade --}}
+
+<h3>tag de Impressão do Blade</h3>
+@isset($fornecedores4)
+    @forelse($fornecedores4 as $indice => $fornecedor)
+        Fornecedor: @{{ $fornecedor['nome'] }}
+        <br>
+        Status: @{{ $fornecedor['status'] }}
+        <br>
+        CNPJ: @{{ $fornecedor['cnpj'] ?? '' }}
+        <br>
+        (DDD) Telefone: (@{{ $fornecedor['ddd'] ?? '' }}) @{{ $fornecedor['telefone'] ?? '' }}
+        <hr>
+    @empty
+        Não existem fornecedores cadastrados!
+    @endforelse
+@endisset
+
+{{-- Variável Loop --}}
+
+<h3>Variável Loop</h3>
+@isset($fornecedores4)
+    @forelse($fornecedores4 as $indice => $fornecedor)
+        
+        {{-- Propriedades do loop --}}
+        {{-- @dd($loop) --}}
+
+        {{-- Iteração atual --}}
+        Iteração atual: {{ $loop->iteration }}
+        <br><br>
+        Fornecedor: {{ $fornecedor['nome'] }}
+        <br>
+        Status: {{ $fornecedor['status'] }}
+        <br>
+        CNPJ: {{ $fornecedor['cnpj'] ?? '' }}
+        <br>
+        (DDD) Telefone: ({{ $fornecedor['ddd'] ?? '' }}) {{ $fornecedor['telefone'] ?? '' }}
+        <br>
+        {{-- Primeira Iteração --}}
+        @if($loop->first)
+            Primeira iteração do Loop
+        @endif
+
+        {{-- Última Iteração --}}
+        @if($loop->last)
+            Última iteração do Loop
+            <br>
+            {{-- Total de registros --}}
+            Total de registros: {{ $loop->count }}
+        @endif
+        <hr>
+    @empty
+        Não existem fornecedores cadastrados!
+    @endforelse
 @endisset

@@ -54,6 +54,8 @@ class FornecedorController extends Controller
             ]
         ];
 
+        $fornecedores5 = [];
+
         /*
         Operador condicional ternário
 
@@ -64,6 +66,8 @@ class FornecedorController extends Controller
         $msg = isset($fornecedores2[0]['cnpj']) ? 'CNPJ informado' : 'CNPJ não informado';
         echo $msg;
 
-        return view('app.fornecedor.index', compact('fornecedores1', 'fornecedores2', 'fornecedores3', 'fornecedores4'));
+        return view('app.fornecedor.index', compact(
+            'fornecedores1', 'fornecedores2', 'fornecedores3', 'fornecedores4', 'fornecedores5'
+        ));
     }
 }
