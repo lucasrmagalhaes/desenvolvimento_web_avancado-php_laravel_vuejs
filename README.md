@@ -105,3 +105,10 @@ Cross-site request forgery ou falsificação de solitação entre sites.
 ```php
 php artisan make:model SiteContato -m
 ```
+
+##### Executar as Migrations
+php.ini - Remover o ; ```;extension=pdo_sqlite```
+
+```php
+php artisan migrate
+```
