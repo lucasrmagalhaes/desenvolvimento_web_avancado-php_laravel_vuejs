@@ -98,7 +98,7 @@ php artisan make:controller FornecedorController
 php artisan view:clear
 ```
 
-##### csrf
+##### csrf (Garante segurança no envio de dados do form)
 Cross-site request forgery ou falsificação de solitação entre sites.
 
 ##### Model (-m = Migration)
@@ -124,3 +124,19 @@ Authentication Method -> RECOMMENDED <br>
 Accounts and Roles -> Definir a senha <br>
 Windows Service -> - [] Start the MySQL Server at System Startup <br><br>
 Serviços do Windows -> MySQL80
+
+##### Query
+```sql
+CREATE DATABASE sg
+```
+
+```sql
+USE sg
+```
+
+##### Testando o PDO
+```php
+php -r "var_dump(extension_loaded('pdo_mysql'));"
+```
+
+Se retornar false, acessar o php.ini e remover o ; da linha: ```;extension=pdo_mysql```
