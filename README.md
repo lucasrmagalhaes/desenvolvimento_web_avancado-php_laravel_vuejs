@@ -140,6 +140,13 @@ php artisan make:migration alter_fornecedores_novas_colunas
 php artisan make:migration create_produtos_table
 ```
 
+```php
+php artisan make:migration create_produto_detalhes_table
+```
+
+signed - aceita valores negativos <br>
+unsigned - não aceita valores negativos
+
 ##### SGBD MySQL
 [Download](https://dev.mysql.com/downloads/installer/) <br>
 Custom -> <br>
@@ -175,6 +182,10 @@ DESCRIBE site_contatos;
 
 ```
 DESCRIBE produtos;
+```
+
+```
+DESCRIBE produto_detalhes;
 ```
 
 ##### Testando o PDO
