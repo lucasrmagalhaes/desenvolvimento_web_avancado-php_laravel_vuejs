@@ -240,3 +240,69 @@ Console interativo nativo do Laravel <br>
 ```php
 php artisan tinker
 ```
+
+```php
+$contato = new \App\SiteContato();
+```
+
+```php
+$contato->nome = 'Lucas';
+```
+
+```php
+$contato->telefone = '(51) 98611-4444';
+```
+
+```php
+$contato->email = 'lucas@contato.com.br';
+```
+
+```php
+$contato->motivo_contato = 1;
+```
+
+```php
+$contato->mensagem = 'Olá! Gostaria de mais detalhes sobre o Super Gestão.';
+```
+
+Método vem da classe Model
+```php
+print_r($contato->getAttributes());
+```
+
+Método vem da classe Model
+```php
+$contato->save();
+```
+
+```php
+$contato2 = new \App\SiteContato();
+```
+
+```php
+$contato2->nome = 'Fulano';
+```
+
+```php
+$contato2->telefone = '(51) 98611-0000';
+```
+
+```php
+$contato2->email = 'fulano@contato.com.br';
+```
+
+```php
+$contato2->motivo_contato = 2;
+```
+
+```php
+$contato2->mensagem = 'Estou gostando muito do Super Gestão.';
+```
+
+```php
+print_r($contato2->getAttributes());
+```
+
+```php
+$contato2->save();
+```
