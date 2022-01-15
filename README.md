@@ -100,3 +100,8 @@ php artisan view:clear
 
 ##### csrf
 Cross-site request forgery ou falsificação de solitação entre sites.
+
+##### Model (-m = Migration)
+```php
+php artisan make:model SiteContato -m
+```
