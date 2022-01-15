@@ -46,8 +46,8 @@ Localhost:
 cd public/
 ```
 
-```
-php -S localhost:8000
+```php
+php -S localhost:80
 ```
 
 ##### Introdução as Rotas, Controllers e Views
