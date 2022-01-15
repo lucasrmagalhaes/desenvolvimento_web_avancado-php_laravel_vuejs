@@ -231,3 +231,6 @@ php -r "var_dump(extension_loaded('pdo_mysql'));"
 ```
 
 Se retornar false, acessar o php.ini e remover o ; da linha: ```;extension=pdo_mysql```
+
+##### Eloquent ORM - Laravel utiliza Active Record 
+Dois padrões: Data Mapper e Active Record
