@@ -230,3 +230,21 @@ Status: {{ $fornecedores2[0]['status'] }}
         Não existem fornecedores cadastrados!
     @endforelse
 @endisset
+
+{{-- Tag de Impressão do Blade --}}
+
+<h3>tag de Impressão do Blade</h3>
+@isset($fornecedores4)
+    @forelse($fornecedores4 as $indice => $fornecedor)
+        Fornecedor: @{{ $fornecedor['nome'] }}
+        <br>
+        Status: @{{ $fornecedor['status'] }}
+        <br>
+        CNPJ: @{{ $fornecedor['cnpj'] ?? '' }}
+        <br>
+        (DDD) Telefone: (@{{ $fornecedor['ddd'] ?? '' }}) @{{ $fornecedor['telefone'] ?? '' }}
+        <hr>
+    @empty
+        Não existem fornecedores cadastrados!
+    @endforelse
+@endisset
