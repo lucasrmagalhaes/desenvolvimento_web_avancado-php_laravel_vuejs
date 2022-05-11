@@ -331,3 +331,12 @@ $fornecedores = Fornecedor::all();
 print_r($fornecedores->toArray());
 foreach($fornecedores as $f) { echo $f->nome; echo ' - '; }
 ```
+
+```php
+php artisan tinker
+use \App\Fornecedor;
+$fornecedores2 = Fornecedor::find(2);
+echo $fornecedores2->nome;
+$fornecedores2 = Fornecedor::find([1, 2, 3, 4]);
+foreach($fornecedores2 as $f) { echo $f->nome; echo ' - '; }
+```
