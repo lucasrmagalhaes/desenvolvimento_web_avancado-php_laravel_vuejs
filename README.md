@@ -322,3 +322,12 @@ $f->save();
 php artisan tinker
 \App\Fornecedor::create(['nome' => 'Fornecedor ABC', 'site' => 'fornecedorabc.com.br', 'uf' => 'SP', 'email' => 'contato@fornecedor.com.br']);
 ```
+
+```php
+php artisan tinker
+// $fornecedores = \App\Fornecedor::all();
+use \App\Fornecedor;
+$fornecedores = Fornecedor::all();
+print_r($fornecedores->toArray());
+foreach($fornecedores as $f) { echo $f->nome; echo ' - '; }
+```
