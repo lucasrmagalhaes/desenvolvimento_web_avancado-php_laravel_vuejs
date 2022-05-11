@@ -340,3 +340,21 @@ echo $fornecedores2->nome;
 $fornecedores2 = Fornecedor::find([1, 2, 3, 4]);
 foreach($fornecedores2 as $f) { echo $f->nome; echo ' - '; }
 ```
+
+```php
+/**
+ * where (comparação) operadores lógicos
+ * >
+ * >=
+ * <
+ * <=
+ * <>
+ * ==
+ * like
+ */
+
+php artisan tinker
+use \App\SiteContato;
+$contatos = SiteContato::where('id', '>', 1);
+$contatos = SiteContato::where('id', '>', 1)->get();
+```
