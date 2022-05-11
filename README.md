@@ -365,3 +365,10 @@ use \App\SiteContato;
 $contatos = SiteContato::whereIn('motivo_contato', [1, 3])->get();
 $contatos = SiteContato::whereNotIn('motivo_contato', [1, 3])->get();
 ```
+
+```php
+php artisan tinker
+use \App\SiteContato;
+$contatos = SiteContato::whereBetween('id', [3, 6])->get();
+$contatos = SiteContato::whereNotBetween('id', [3, 6])->get();
+```
