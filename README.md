@@ -358,3 +358,10 @@ use \App\SiteContato;
 $contatos = SiteContato::where('id', '>', 1);
 $contatos = SiteContato::where('id', '>', 1)->get();
 ```
+
+```php
+php artisan tinker
+use \App\SiteContato;
+$contatos = SiteContato::whereIn('motivo_contato', [1, 3])->get();
+$contatos = SiteContato::whereNotIn('motivo_contato', [1, 3])->get();
+```
