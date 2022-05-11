@@ -306,3 +306,19 @@ print_r($contato2->getAttributes());
 ```php
 $contato2->save();
 ```
+
+```php
+php artisan tinker
+$f = new \App\Fornecedor();
+$f->nome = 'Fornecedor XYZ';
+$f->site = 'fornecedorxyz.com.br';
+$f->uf = 'RS';
+$f->email = 'contato@fornecedorxyz.com.br';
+print_r($f->getAttributes());
+$f->save();
+```
+
+```php
+php artisan tinker
+\App\Fornecedor::create(['nome' => 'Fornecedor ABC', 'site' => 'fornecedorabc.com.br', 'uf' => 'SP', 'email' => 'contato@fornecedor.com.br']);
+```
