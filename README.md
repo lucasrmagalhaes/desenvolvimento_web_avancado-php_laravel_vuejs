@@ -372,3 +372,9 @@ use \App\SiteContato;
 $contatos = SiteContato::whereBetween('id', [3, 6])->get();
 $contatos = SiteContato::whereNotBetween('id', [3, 6])->get();
 ```
+
+```php
+php artisan tinker
+use \App\SiteContato;
+$contatos = SiteContato::where('nome', '<>', 'Fernando')->whereIn('motivo_contato', [1, 2])->whereBetween('created_at', ['2022-01-15 23:27:54', '2022-01-15 23:29:57'])->get();
+```
