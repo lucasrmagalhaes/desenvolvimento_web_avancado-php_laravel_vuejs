@@ -381,7 +381,7 @@ $contatos = SiteContato::where('nome', '<>', 'Fernando')->whereIn('motivo_contat
 
 ```php
 php artisan tinker
-use \App\SiteContato
+use \App\SiteContato;
 $contatos = SiteContato::where('nome', '<>', 'Fernando')->orWhereIn('motivo_contato', [1, 2])->orWhereBetween('created_at', ['2022-01-15 23:27:54', '2022-01-15 23:29:57'])->get();
 ```
 
@@ -401,13 +401,24 @@ $contatos = SiteContato::whereNotNull('updated_at')->orWhereNull('created_at')->
 *Selecionando registros com base em parâmetros do tipo data e hora*
 ```php
 php artisan tinker
-use \App\SiteContato
+use \App\SiteContato;
 $contatos = SiteContato::whereDate('created_at', '2022-01-15')->get();
 $contatos = SiteContato::whereDay('created_at', '15')->get();
 $contatos = SiteContato::whereMonth('created_at', '01')->get();
 $contatos = SiteContato::whereYear('created_at', '2022')->get();
 $contatos = SiteContato::whereTime('created_at', '=', '23:27:54')->get();
 $contatos = SiteContato::whereTime('created_at', '>', '23:00:00')->get();
+```
+
+---
+
+*Selecionando registros com whereColumn()*
+```php
+php artisan tinker
+use \App\SiteContato;
+$contatos = SiteContato::whereColumn('created_at', 'updated_at')->get(); // Não compara valores nulos
+$contatos = SiteContato::whereColumn('created_at', '=', 'updated_at')->get();
+$contatos = SiteContato::where('id', '>', 0)->whereColumn('created_at', 'updated_at')->get();
 ```
 
 ---
