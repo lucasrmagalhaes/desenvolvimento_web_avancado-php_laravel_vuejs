@@ -481,3 +481,13 @@ $contatos = SiteContato::all()->toJson();
 ```
 
 ---
+
+*Collection pluck*
+```php
+php artisan tinker
+use \App\SiteContato;
+$contatos = SiteContato::all()->pluck('email');
+$contatos = SiteContato::all()->pluck('email', 'nome');
+```
+
+---
