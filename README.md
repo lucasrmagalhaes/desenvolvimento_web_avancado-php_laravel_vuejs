@@ -441,3 +441,15 @@ $contatos = SiteContato::where(
 ```
 
 ---
+
+*Ordenando registros*
+```php
+php artisan tinker
+use \App\SiteContato;
+$contatos = SiteContato::all();
+$contatos = SiteContato::orderBy('nome', 'asc')->get();
+$contatos = SiteContato::orderBy('nome', 'desc')->get();
+$contatos = SiteContato::orderBy('motivo_contato')->orderBy('nome', 'desc')->get();
+```
+
+---
