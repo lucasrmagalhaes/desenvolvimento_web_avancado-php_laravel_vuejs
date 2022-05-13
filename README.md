@@ -459,3 +459,15 @@ $contatos = SiteContato::orderBy('motivo_contato')->orderBy('nome', 'desc')->get
 [Collections](https://laravel.com/docs/9.x/collections)
 
 ---
+
+*Collection first, last e reverse*
+```php
+php artisan tinker
+use \App\SiteContato;
+$contatos = SiteContato::where('id', '>', 3)->get();
+$contatos->first();
+$contatos->last();
+$contatos->reverse(); // ordem reversa
+```
+
+---
