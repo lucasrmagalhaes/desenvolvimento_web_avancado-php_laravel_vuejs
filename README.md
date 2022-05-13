@@ -422,3 +422,22 @@ $contatos = SiteContato::where('id', '>', 0)->whereColumn('created_at', 'updated
 ```
 
 ---
+
+*Selecionando registros aplicando precedência em operações lógicas*
+```php
+php artisan tinker
+use \App\SiteContato;
+$contatos = SiteContato::where(
+    function($query) { 
+        $query->where('nome', 'Lucas')
+        ->orWhere('nome', 'Fulano');
+    }
+)->where(
+    function($query) { 
+        $query->whereIn('motivo_contato', [1, 2])
+        ->orWhereBetween('id', [4, 6]); 
+    }
+)->get();
+```
+
+---
