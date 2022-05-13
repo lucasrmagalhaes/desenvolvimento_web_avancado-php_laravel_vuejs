@@ -385,6 +385,8 @@ use \App\SiteContato
 $contatos = SiteContato::where('nome', '<>', 'Fernando')->orWhereIn('motivo_contato', [1, 2])->orWhereBetween('created_at', ['2022-01-15 23:27:54', '2022-01-15 23:29:57'])->get();
 ```
 
+---
+
 *Selecionando registros com whereNull() e whereNotNull()*
 ```php
 php artisan tinker
@@ -393,3 +395,19 @@ $contatos = SiteContato::whereNull('updated_at')->get();
 $contatos = SiteContato::whereNotNull('updated_at')->get();
 $contatos = SiteContato::whereNotNull('updated_at')->orWhereNull('created_at')->get();
 ```
+
+---
+
+*Selecionando registros com base em parâmetros do tipo data e hora*
+```php
+php artisan tinker
+use \App\SiteContato
+$contatos = SiteContato::whereDate('created_at', '2022-01-15')->get();
+$contatos = SiteContato::whereDay('created_at', '15')->get();
+$contatos = SiteContato::whereMonth('created_at', '01')->get();
+$contatos = SiteContato::whereYear('created_at', '2022')->get();
+$contatos = SiteContato::whereTime('created_at', '=', '23:27:54')->get();
+$contatos = SiteContato::whereTime('created_at', '>', '23:00:00')->get();
+```
+
+---
