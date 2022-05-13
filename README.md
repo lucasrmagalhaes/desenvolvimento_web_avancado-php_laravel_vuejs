@@ -453,3 +453,9 @@ $contatos = SiteContato::orderBy('motivo_contato')->orderBy('nome', 'desc')->get
 ```
 
 ---
+
+*Introdução as Collections*
+
+[Collections](https://laravel.com/docs/9.x/collections)
+
+---
