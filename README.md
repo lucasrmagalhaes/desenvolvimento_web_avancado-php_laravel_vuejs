@@ -384,3 +384,12 @@ php artisan tinker
 use \App\SiteContato
 $contatos = SiteContato::where('nome', '<>', 'Fernando')->orWhereIn('motivo_contato', [1, 2])->orWhereBetween('created_at', ['2022-01-15 23:27:54', '2022-01-15 23:29:57'])->get();
 ```
+
+*Selecionando registros com whereNull() e whereNotNull()*
+```php
+php artisan tinker
+use \App\SiteContato
+$contatos = SiteContato::whereNull('updated_at')->get();
+$contatos = SiteContato::whereNotNull('updated_at')->get();
+$contatos = SiteContato::whereNotNull('updated_at')->orWhereNull('created_at')->get();
+```
