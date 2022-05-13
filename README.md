@@ -378,3 +378,9 @@ php artisan tinker
 use \App\SiteContato;
 $contatos = SiteContato::where('nome', '<>', 'Fernando')->whereIn('motivo_contato', [1, 2])->whereBetween('created_at', ['2022-01-15 23:27:54', '2022-01-15 23:29:57'])->get();
 ```
+
+```php
+php artisan tinker
+use \App\SiteContato
+$contatos = SiteContato::where('nome', '<>', 'Fernando')->orWhereIn('motivo_contato', [1, 2])->orWhereBetween('created_at', ['2022-01-15 23:27:54', '2022-01-15 23:29:57'])->get();
+```
