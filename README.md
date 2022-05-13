@@ -471,3 +471,13 @@ $contatos->reverse(); // ordem reversa
 ```
 
 ---
+
+*Collection toArray e toJson*
+```php
+php artisan tinker
+use \App\SiteContato;
+$contatos = SiteContato::all()->toArray();
+$contatos = SiteContato::all()->toJson();
+```
+
+---
