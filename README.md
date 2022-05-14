@@ -566,6 +566,24 @@ $fornecedor->forceDelete(); // Removido da tabela
 
 ---
 
+*Selecionando e restaurando registros deletados com SoftDelete*
+```php
+php artisan tinker
+
+use \App\Fornecedor;
+
+Fornecedor::withTrashed()->get();
+
+Fornecedor::create(['nome' => 'Fornecedor 1', 'site' => 'fornecedor1.com.br', 'uf' => 'RS', 'email' => 'contato@fornecedor1.com.br']);
+
+Fornecedor::onlyTrashed()->get();
+
+$fornecedor = Fornecedor::withTrashed()->get();
+$fornecedor[0]->restore();
+```
+
+---
+
 *Gravando os dados do formulário no banco de dados*
 ```php
 $contato = new SiteContato();
