@@ -492,6 +492,20 @@ $contatos = SiteContato::all()->pluck('email', 'nome');
 
 ---
 
+*Atualizando registros (save)*
+```php
+php artisan tinker
+use \App\Fornecedor;
+$fornecedor = Fornecedor::find(1);
+$fornecedor->nome = 'Fornecedor 123';
+$fornecedor->site = 'fornecedor123.com.br';
+$fornecedor->email = 'contato@fornecedor123.com.br';
+print_r($fornecedor);
+$fornecedor->save();
+```
+
+---
+
 *Gravando os dados do formulário no banco de dados*
 ```php
 $contato = new SiteContato();
