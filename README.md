@@ -528,6 +528,22 @@ Fornecedor::whereIn('id', [1, 2])->update(['nome' => 'Fornecedor Teste', 'site' 
 
 ---
 
+*Deletando registros (delete e destroy)*
+```php
+php artisan tinker
+
+use \App\SiteContato;
+
+$contato = SiteContato::find(4);
+$contato->delete();
+
+SiteContato::where('id', 7)->delete();
+
+SiteContato::destroy(5);
+```
+
+---
+
 *Gravando os dados do formulário no banco de dados*
 ```php
 $contato = new SiteContato();
