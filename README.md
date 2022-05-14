@@ -508,3 +508,10 @@ $contato->save();
 ```
 
 ---
+
+*Validação de quantidades mínimas e máximas de caracteres (min e max)*
+
+* [Validation](https://laravel.com/docs/9.x/validation)
+* [Available Validation Rules](https://laravel.com/docs/9.x/validation#available-validation-rules)
+
+---
