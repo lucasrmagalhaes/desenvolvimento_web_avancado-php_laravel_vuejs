@@ -491,3 +491,20 @@ $contatos = SiteContato::all()->pluck('email', 'nome');
 ```
 
 ---
+
+*Gravando os dados do formulário no banco de dados*
+```php
+$contato = new SiteContato();
+
+$contato->nome = $request->input('nome');
+$contato->telefone = $request->input('telefone');
+$contato->email = $request->input('email');
+$contato->motivo_contato = $request->input('motivo_contato');
+$contato->mensagem = $request->input('mensagem');
+
+print_r($contato->getAttributes());
+
+$contato->save();
+```
+
+---
