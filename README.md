@@ -1,21 +1,21 @@
-### Desenvolvimento Web Avançado 2021 com PHP, Laravel e Vue.JS
+<h3 align="center">Desenvolvimento Web Avançado 2022 com PHP, Laravel e Vue.JS</h3>
+
+---
 
 ##### [WINDOWS] - Preparando-se para o desenvolvimento
-[PHP](https://www.php.net/downloads) <br>
+* [PHP](https://www.php.net/downloads)
 Windows downloads - Zip <br>
 Extrair o zip em uma pasta e mover para: ```C:\``` <br>
 
 ```php
 php --version
-``` 
+```
 
-<br>
+Adicionar o caminho do diretório PHP no path das variáveis de ambiente <br>
+php.ini-development renomear para php.ini (Ambiente de Desenvolvimento)
 
-Adicionar o caminho do diretório PHP no path das variáveis de ambiente<br>
-php.ini-development renomear para php.ini (Ambiente de Desenvolvimento)<br>
-
-[Composer](https://getcomposer.org/) <br>
-Download - Windows Installer - Composer-Setup.exe <br>
+* [Composer](https://getcomposer.org/)
+Download - Windows Installer - Composer-Setup.exe
 
 ```
 composer --version
@@ -25,23 +25,24 @@ composer --version
 composer self-update
 ```
 
-[Laravel](https://laravel.com) <br>
-Configuração para buscar os pacotes no packagist:
+* [Laravel](https://laravel.com)
+
+*Configuração para buscar os pacotes no packagist:*
 ```
 composer config -g repo.packagist composer https://packagist.org
 ```
 
-Configuração GitHub:
+*Configuração GitHub:*
 ```
 composer config -g github-protocols https ssh
 ```
 
-Forçando a instalação do Laravel 7.0.:
+*Forçando a instalação do Laravel 7.0.:*
 ```
 composer create-project --prefer-dist laravel/laravel projeto_laravel_via_composer "7.0"
 ```
 
-Localhost:
+*Localhost:*
 ```
 cd public/
 ```
@@ -113,42 +114,42 @@ php artisan make:model Fornecedor
 ##### Executando as Migrations
 php.ini - Remover o ; ```;extension=pdo_sqlite```
 
-Listagem das migrates e informa se já foi executada
+*Listagem das migrates e informa se já foi executada*
 ```php
 php artisan migrate:status
 ```
 
-Reverte todas as migrações do banco - do mais novo para o antigo - rollback
+*Reverte todas as migrações do banco - do mais novo para o antigo - rollback*
 ```php
 php artisan migrate:reset
 ```
 
-Reverte todas as migrações e na sequência roda o migrate, criando um banco de dados zerado
+*Reverte todas as migrações e na sequência roda o migrate, criando um banco de dados zerado*
 ```php
 php artisan migrate:refresh
 ```
 
-Faz o drop de todos os objetos do banco de dados + o migrate para recriar os objetos
+*Faz o drop de todos os objetos do banco de dados + o migrate para recriar os objetos*
 ```php
 php artisan migrate:fresh
 ```
 
-(UP) Mais antiga para a mais atual
+*(UP) Mais antiga para a mais atual*
 ```php
 php artisan migrate
 ```
 
-(UP) Rodar uma migration com o caminho (--path)
+*(UP) Rodar uma migration com o caminho (--path)*
 ```php
 php artisan migrate --path="database/migrations/2022_01_15_205953_create_produtos_table"
 ```
 
-(DOWN) Da mais atual para a mais antiga
+*(DOWN) Da mais atual para a mais antiga*
 ```php
 php artisan migrate:rollback
 ```
 
-(DOWN) Passos - batch - step
+*(DOWN) Passos - batch - step*
 ```php
 php artisan migrate:rollback --step=2
 ```
@@ -236,7 +237,8 @@ Se retornar false, acessar o php.ini e remover o ; da linha: ```;extension=pdo_m
 Dois padrões: Data Mapper e Active Record
 
 ##### Tinker
-Console interativo nativo do Laravel <br>
+
+*Console interativo nativo do Laravel*
 ```php
 php artisan tinker
 ```
@@ -270,7 +272,7 @@ Método vem da classe Model
 print_r($contato->getAttributes());
 ```
 
-Método vem da classe Model
+*Método vem da classe Model*
 ```php
 $contato->save();
 ```
@@ -502,6 +504,17 @@ $fornecedor->site = 'fornecedor123.com.br';
 $fornecedor->email = 'contato@fornecedor123.com.br';
 print_r($fornecedor);
 $fornecedor->save();
+```
+
+---
+
+*Atualizando registros (fill e save)*
+```php
+php artisan tinker
+use \App\Fornecedor;
+$fornecedores2 = Fornecedor::find(2);
+$fornecedores2->fill(['nome' => 'Fornecedor 789', 'site' => 'fornecedor789.com.br', 'email' => 'fornecedor789@gmail.com']);
+$fornecedores2->save();
 ```
 
 ---
