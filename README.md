@@ -519,6 +519,15 @@ $fornecedores2->save();
 
 ---
 
+*Atualizando registros (where e update)*
+```php
+php artisan tinker
+use \App\Fornecedor;
+Fornecedor::whereIn('id', [1, 2])->update(['nome' => 'Fornecedor Teste', 'site' => 'teste.com.br']);
+```
+
+---
+
 *Gravando os dados do formulário no banco de dados*
 ```php
 $contato = new SiteContato();
