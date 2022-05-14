@@ -544,6 +544,28 @@ SiteContato::destroy(5);
 
 ---
 
+*Deletando registros com SoftDelete*
+```php
+php artisan make:migration alter_fornecedores_softdelete
+
+php artisan migrate:status
+php artisan migrate
+
+php artisan tinker
+
+use \App\Fornecedor;
+
+$fornecedor = Fornecedor::find(2);
+$fornecedor->delete(); // Removido mas segue na tabela
+
+Fornecedor::all();
+
+$fornecedor = Fornecedor::find(1);
+$fornecedor->forceDelete(); // Removido da tabela
+```
+
+---
+
 *Gravando os dados do formulário no banco de dados*
 ```php
 $contato = new SiteContato();

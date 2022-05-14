@@ -6,29 +6,18 @@ use Illuminate\Support\Facades\Schema;
 
 class CreateFornecedoresTable extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
     public function up()
     {
         Schema::create('fornecedores', function (Blueprint $table) {
             $table->id();
             $table->string('nome', 50);
             $table->timestamps();
+            // $table->softDeletes();
         });
     }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
     public function down()
     {
         Schema::dropIfExists('fornecedores');
-        
-        // Schema::drop('fornecedores');
     }
 }
