@@ -199,11 +199,19 @@ Serviços do Windows -> MySQL80
 
 ##### Query
 ```
-CREATE DATABASE sg
+cd c:/xampp/mysql/bin
 ```
 
 ```
-USE sg
+mysql.exe -u root -p
+```
+
+```
+CREATE DATABASE sg;
+```
+
+```
+USE sg;
 ```
 
 ```
@@ -607,3 +615,13 @@ $contato->save();
 * [Available Validation Rules](https://laravel.com/docs/9.x/validation#available-validation-rules)
 
 ---
+
+*Criando o Seeder de Fornecedor*
+```php
+php artisan make:seeder FornecedorSeeder
+```
+
+*Execução do Seeder*
+```php
+php artisan db:seed
+```
