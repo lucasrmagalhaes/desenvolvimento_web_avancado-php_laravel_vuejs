@@ -621,7 +621,17 @@ $contato->save();
 php artisan make:seeder FornecedorSeeder
 ```
 
-*Execução do Seeder*
+*Execução de Todos os Seeders*
 ```php
 php artisan db:seed
+```
+
+*Criando o Seeder de SiteContato*
+```php
+php artisan make:seeder SiteContatoSeeder
+```
+
+*Execução do Seeder SiteContato*
+```php
+php artisan db:seed --class=SiteContatoSeeder
 ```
