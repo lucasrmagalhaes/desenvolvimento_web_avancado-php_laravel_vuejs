@@ -635,3 +635,8 @@ php artisan make:seeder SiteContatoSeeder
 ```php
 php artisan db:seed --class=SiteContatoSeeder
 ```
+
+*Criando a Factory SiteContato*
+```php
+php artisan make:factory SiteContatoFactory --model=SiteContato
+```
