@@ -16,9 +16,10 @@
     
     <select name="motivo_contato" class="{{ $classe }}">
         <option value="">Qual o motivo do contato?</option>
-        <option value="1">Dúvida</option>
-        <option value="2">Elogio</option>
-        <option value="3">Reclamação</option>
+
+        @foreach ($motivo_contatos as $key => $motivo_contato)
+            <option value="{{ $key }}" {{ old('motivo_contato') == $key ? 'selected' : '' }}>{{ $motivo_contato }}</option>
+        @endforeach
     </select>
 
     <br />
