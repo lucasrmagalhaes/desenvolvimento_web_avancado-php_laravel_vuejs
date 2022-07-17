@@ -636,7 +636,39 @@ php artisan make:seeder SiteContatoSeeder
 php artisan db:seed --class=SiteContatoSeeder
 ```
 
+---
+
 *Criando a Factory SiteContato*
 ```php
 php artisan make:factory SiteContatoFactory --model=SiteContato
 ```
+
+---
+
+*Criando a Model e Migration de Motivo Contato*
+
+```
+php artisan make:model MotivoContato -m
+```
+
+*Criando o Seeder de MotivoContato*
+```php
+php artisan make:seeder MotivoContatoSeeder
+```
+
+*Verificando o status*
+```php
+php artisan migrate:status
+```
+
+*Executando o migrate*
+```php
+php artisan migrate
+```
+
+*Execução do Seeder MotivoContato*
+```php
+php artisan db:seed --class=MotivoContatoSeeder
+```
+
+---
