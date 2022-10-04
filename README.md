@@ -2,8 +2,9 @@
 
 ---
 
-##### [WINDOWS] - Preparando-se para o desenvolvimento
+**[WINDOWS] - Preparando-se para o desenvolvimento**
 * [PHP](https://www.php.net/downloads)
+
 Windows downloads - Zip <br>
 Extrair o zip em uma pasta e mover para: ```C:\``` <br>
 
@@ -27,22 +28,22 @@ composer self-update
 
 * [Laravel](https://laravel.com)
 
-*Configuração para buscar os pacotes no packagist:*
+**Configuração para buscar os pacotes no packagist:**
 ```
 composer config -g repo.packagist composer https://packagist.org
 ```
 
-*Configuração GitHub:*
+**Configuração GitHub:**
 ```
 composer config -g github-protocols https ssh
 ```
 
-*Forçando a instalação do Laravel 7.0.:*
+**Forçando a instalação do Laravel 7.0.:**
 ```
 composer create-project --prefer-dist laravel/laravel projeto_laravel_via_composer "7.0"
 ```
 
-*Localhost:*
+**Localhost:**
 ```
 cd public/
 ```
@@ -51,7 +52,7 @@ cd public/
 php -S localhost:80
 ```
 
-##### Introdução as Rotas, Controllers e Views
+**Introdução as Rotas, Controllers e Views**
 ```
 composer create-project --prefer-dist laravel/laravel app_super_gestao "7.0.0"
 ```
@@ -68,8 +69,7 @@ php artisan -V
 php artisan serve
 ```
 
-##### Rotas
-Organização das Rotas no Laravel: <br>
+**Rotas - Organização das Rotas no Laravel:**
 - API;
 - Channels;
 - Console; e
@@ -79,7 +79,7 @@ Organização das Rotas no Laravel: <br>
 php artisan route:list
 ```
 
-##### Controllers
+**Controllers**
 ```php
 php artisan make:controller PrincipalController
 ```
@@ -92,17 +92,17 @@ php artisan make:controller TesteController
 php artisan make:controller FornecedorController
 ```
 
-##### Extensão: laravel-blade
+**Extensão: laravel-blade**
 
-##### Limpar as views compiladas do cache
+**Limpar as views compiladas do cache**
 ```php
 php artisan view:clear
 ```
 
-##### csrf (Garante segurança no envio de dados do form)
-Cross-site request forgery ou falsificação de solitação entre sites.
+**csrf (Garante segurança no envio de dados do form)**
+- Cross-site request forgery ou falsificação de solitação entre sites.
 
-##### Model (-m = Migration)
+**Model (-m = Migration)**
 ```php
 php artisan make:model SiteContato -m
 ```
@@ -111,45 +111,45 @@ php artisan make:model SiteContato -m
 php artisan make:model Fornecedor
 ```
 
-##### Executando as Migrations
-php.ini - Remover o ; ```;extension=pdo_sqlite```
+**Executando as Migrations**
+- php.ini - Remover o ; ```;extension=pdo_sqlite```
 
-*Listagem das migrates e informa se já foi executada*
+**Listagem das migrates e informa se já foi executada**
 ```php
 php artisan migrate:status
 ```
 
-*Reverte todas as migrações do banco - do mais novo para o antigo - rollback*
+**Reverte todas as migrações do banco - do mais novo para o antigo - rollback**
 ```php
 php artisan migrate:reset
 ```
 
-*Reverte todas as migrações e na sequência roda o migrate, criando um banco de dados zerado*
+**Reverte todas as migrações e na sequência roda o migrate, criando um banco de dados zerado**
 ```php
 php artisan migrate:refresh
 ```
 
-*Faz o drop de todos os objetos do banco de dados + o migrate para recriar os objetos*
+**Faz o drop de todos os objetos do banco de dados + o migrate para recriar os objetos**
 ```php
 php artisan migrate:fresh
 ```
 
-*(UP) Mais antiga para a mais atual*
+**(UP) Mais antiga para a mais atual**
 ```php
 php artisan migrate
 ```
 
-*(UP) Rodar uma migration com o caminho (--path)*
+**(UP) Rodar uma migration com o caminho (--path)**
 ```php
 php artisan migrate --path="database/migrations/2022_01_15_205953_create_produtos_table"
 ```
 
-*(DOWN) Da mais atual para a mais antiga*
+**(DOWN) Da mais atual para a mais antiga**
 ```php
 php artisan migrate:rollback
 ```
 
-*(DOWN) Passos - batch - step*
+**(DOWN) Passos - batch - step**
 ```php
 php artisan migrate:rollback --step=2
 ```
@@ -185,8 +185,9 @@ php artisan make:migration alter_fornecedores_nova_coluna_site_com_after
 signed - aceita valores negativos <br>
 unsigned - não aceita valores negativos
 
-##### SGBD MySQL
-[Download](https://dev.mysql.com/downloads/installer/) <br>
+**SGBD MySQL**
+* [Download](https://dev.mysql.com/downloads/installer/)
+
 Custom -> <br>
 MySQL Servers -> MySQL Server <br>
 Applications -> MySQL Workbench <br>
@@ -194,10 +195,10 @@ High Availabity -> Standalone MySQL Server / Classic MySQL Replication <br>
 Type and Networking -> Config Type: Development Computer (Reserva menos memória) <br>
 Authentication Method -> RECOMMENDED <br>
 Accounts and Roles -> Definir a senha <br>
-Windows Service -> - [] Start the MySQL Server at System Startup <br><br>
+Windows Service -> - [x] Start the MySQL Server at System Startup <br><br>
 Serviços do Windows -> MySQL80
 
-##### Query
+**Query**
 ```
 cd c:/xampp/mysql/bin
 ```
@@ -234,19 +235,17 @@ DESCRIBE produtos;
 DESCRIBE produto_detalhes;
 ```
 
-##### Testando o PDO
+**Testando o PDO**
 ```php
 php -r "var_dump(extension_loaded('pdo_mysql'));"
 ```
 
 Se retornar false, acessar o php.ini e remover o ; da linha: ```;extension=pdo_mysql```
 
-##### Eloquent ORM - Laravel utiliza Active Record 
-Dois padrões: Data Mapper e Active Record
+**Eloquent ORM - Laravel utiliza Active Record**
+- Dois padrões: Data Mapper e Active Record
 
-##### Tinker
-
-*Console interativo nativo do Laravel*
+**Tinker - Console interativo nativo do Laravel**
 ```php
 php artisan tinker
 ```
@@ -280,7 +279,7 @@ Método vem da classe Model
 print_r($contato->getAttributes());
 ```
 
-*Método vem da classe Model*
+**Método vem da classe Model**
 ```php
 $contato->save();
 ```
@@ -397,7 +396,7 @@ $contatos = SiteContato::where('nome', '<>', 'Fernando')->orWhereIn('motivo_cont
 
 ---
 
-*Selecionando registros com whereNull() e whereNotNull()*
+**Selecionando registros com whereNull() e whereNotNull()**
 ```php
 php artisan tinker
 use \App\SiteContato
@@ -408,7 +407,7 @@ $contatos = SiteContato::whereNotNull('updated_at')->orWhereNull('created_at')->
 
 ---
 
-*Selecionando registros com base em parâmetros do tipo data e hora*
+**Selecionando registros com base em parâmetros do tipo data e hora**
 ```php
 php artisan tinker
 use \App\SiteContato;
@@ -422,7 +421,7 @@ $contatos = SiteContato::whereTime('created_at', '>', '23:00:00')->get();
 
 ---
 
-*Selecionando registros com whereColumn()*
+**Selecionando registros com whereColumn()**
 ```php
 php artisan tinker
 use \App\SiteContato;
@@ -433,7 +432,7 @@ $contatos = SiteContato::where('id', '>', 0)->whereColumn('created_at', 'updated
 
 ---
 
-*Selecionando registros aplicando precedência em operações lógicas*
+**Selecionando registros aplicando precedência em operações lógicas**
 ```php
 php artisan tinker
 use \App\SiteContato;
@@ -452,7 +451,7 @@ $contatos = SiteContato::where(
 
 ---
 
-*Ordenando registros*
+**Ordenando registros**
 ```php
 php artisan tinker
 use \App\SiteContato;
@@ -464,13 +463,13 @@ $contatos = SiteContato::orderBy('motivo_contato')->orderBy('nome', 'desc')->get
 
 ---
 
-*Introdução as Collections*
+**Introdução as Collections**
 
 [Collections](https://laravel.com/docs/9.x/collections)
 
 ---
 
-*Collection first, last e reverse*
+**Collection first, last e reverse**
 ```php
 php artisan tinker
 use \App\SiteContato;
@@ -482,7 +481,7 @@ $contatos->reverse(); // ordem reversa
 
 ---
 
-*Collection toArray e toJson*
+**Collection toArray e toJson**
 ```php
 php artisan tinker
 use \App\SiteContato;
@@ -492,7 +491,7 @@ $contatos = SiteContato::all()->toJson();
 
 ---
 
-*Collection pluck*
+**Collection pluck**
 ```php
 php artisan tinker
 use \App\SiteContato;
@@ -502,7 +501,7 @@ $contatos = SiteContato::all()->pluck('email', 'nome');
 
 ---
 
-*Atualizando registros (save)*
+**Atualizando registros (save)**
 ```php
 php artisan tinker
 use \App\Fornecedor;
@@ -516,7 +515,7 @@ $fornecedor->save();
 
 ---
 
-*Atualizando registros (fill e save)*
+**Atualizando registros (fill e save)**
 ```php
 php artisan tinker
 use \App\Fornecedor;
@@ -527,7 +526,7 @@ $fornecedores2->save();
 
 ---
 
-*Atualizando registros (where e update)*
+**Atualizando registros (where e update)**
 ```php
 php artisan tinker
 use \App\Fornecedor;
@@ -536,7 +535,7 @@ Fornecedor::whereIn('id', [1, 2])->update(['nome' => 'Fornecedor Teste', 'site' 
 
 ---
 
-*Deletando registros (delete e destroy)*
+**Deletando registros (delete e destroy)**
 ```php
 php artisan tinker
 
@@ -552,7 +551,7 @@ SiteContato::destroy(5);
 
 ---
 
-*Deletando registros com SoftDelete*
+**Deletando registros com SoftDelete**
 ```php
 php artisan make:migration alter_fornecedores_softdelete
 
@@ -574,7 +573,7 @@ $fornecedor->forceDelete(); // Removido da tabela
 
 ---
 
-*Selecionando e restaurando registros deletados com SoftDelete*
+**Selecionando e restaurando registros deletados com SoftDelete**
 ```php
 php artisan tinker
 
@@ -592,7 +591,7 @@ $fornecedor[0]->restore();
 
 ---
 
-*Gravando os dados do formulário no banco de dados*
+**Gravando os dados do formulário no banco de dados**
 ```php
 $contato = new SiteContato();
 
@@ -609,71 +608,71 @@ $contato->save();
 
 ---
 
-*Validação de quantidades mínimas e máximas de caracteres (min e max)*
+**Validação de quantidades mínimas e máximas de caracteres (min e max)**
 
 * [Validation](https://laravel.com/docs/9.x/validation)
 * [Available Validation Rules](https://laravel.com/docs/9.x/validation#available-validation-rules)
 
 ---
 
-*Criando o Seeder de Fornecedor*
+**Criando o Seeder de Fornecedor**
 ```php
 php artisan make:seeder FornecedorSeeder
 ```
 
-*Execução de Todos os Seeders*
+**Execução de Todos os Seeders**
 ```php
 php artisan db:seed
 ```
 
-*Criando o Seeder de SiteContato*
+**Criando o Seeder de SiteContato**
 ```php
 php artisan make:seeder SiteContatoSeeder
 ```
 
-*Execução do Seeder SiteContato*
+**Execução do Seeder SiteContato**
 ```php
 php artisan db:seed --class=SiteContatoSeeder
 ```
 
 ---
 
-*Criando a Factory SiteContato*
+**Criando a Factory SiteContato**
 ```php
 php artisan make:factory SiteContatoFactory --model=SiteContato
 ```
 
 ---
 
-*Criando a Model e Migration de Motivo Contato*
+**Criando a Model e Migration de Motivo Contato**
 
 ```
 php artisan make:model MotivoContato -m
 ```
 
-*Criando o Seeder de MotivoContato*
+**Criando o Seeder de MotivoContato**
 ```php
 php artisan make:seeder MotivoContatoSeeder
 ```
 
-*Verificando o status*
+**Verificando o status**
 ```php
 php artisan migrate:status
 ```
 
-*Executando o migrate*
+**Executando o migrate**
 ```php
 php artisan migrate
 ```
 
-*Execução do Seeder MotivoContato*
+**Execução do Seeder MotivoContato**
 ```php
 php artisan db:seed --class=MotivoContatoSeeder
 ```
 
 ---
 
-*Adicionando a FK motivo_contatos no site_contatos*
+**Adicionando a FK motivo_contatos no site_contatos**
 ```php
 php artisan make:migration alter_table_site_contatos_add_fk_motivo_contatos
 ```
@@ -684,6 +683,13 @@ php artisan migrate:status
 
 ```php
 php artisan migrate
+```
+
+---
+
+**Limpar os registros**
+```
+TRUNCATE site_contatos;
 ```
 
 ---
