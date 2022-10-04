@@ -672,3 +672,18 @@ php artisan db:seed --class=MotivoContatoSeeder
 ```
 
 ---
+
+*Adicionando a FK motivo_contatos no site_contatos*
+```php
+php artisan make:migration alter_table_site_contatos_add_fk_motivo_contatos
+```
+
+```php
+php artisan migrate:status
+```
+
+```php
+php artisan migrate
+```
+
+---
