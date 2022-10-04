@@ -199,11 +199,19 @@ Serviços do Windows -> MySQL80
 
 ##### Query
 ```
-CREATE DATABASE sg
+cd c:/xampp/mysql/bin
 ```
 
 ```
-USE sg
+mysql.exe -u root -p
+```
+
+```
+CREATE DATABASE sg;
+```
+
+```
+USE sg;
 ```
 
 ```
@@ -605,5 +613,77 @@ $contato->save();
 
 * [Validation](https://laravel.com/docs/9.x/validation)
 * [Available Validation Rules](https://laravel.com/docs/9.x/validation#available-validation-rules)
+
+---
+
+*Criando o Seeder de Fornecedor*
+```php
+php artisan make:seeder FornecedorSeeder
+```
+
+*Execução de Todos os Seeders*
+```php
+php artisan db:seed
+```
+
+*Criando o Seeder de SiteContato*
+```php
+php artisan make:seeder SiteContatoSeeder
+```
+
+*Execução do Seeder SiteContato*
+```php
+php artisan db:seed --class=SiteContatoSeeder
+```
+
+---
+
+*Criando a Factory SiteContato*
+```php
+php artisan make:factory SiteContatoFactory --model=SiteContato
+```
+
+---
+
+*Criando a Model e Migration de Motivo Contato*
+
+```
+php artisan make:model MotivoContato -m
+```
+
+*Criando o Seeder de MotivoContato*
+```php
+php artisan make:seeder MotivoContatoSeeder
+```
+
+*Verificando o status*
+```php
+php artisan migrate:status
+```
+
+*Executando o migrate*
+```php
+php artisan migrate
+```
+
+*Execução do Seeder MotivoContato*
+```php
+php artisan db:seed --class=MotivoContatoSeeder
+```
+
+---
+
+*Adicionando a FK motivo_contatos no site_contatos*
+```php
+php artisan make:migration alter_table_site_contatos_add_fk_motivo_contatos
+```
+
+```php
+php artisan migrate:status
+```
+
+```php
+php artisan migrate
+```
 
 ---
