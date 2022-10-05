@@ -715,3 +715,7 @@ php artisan migrate
 ```
 SELECT * FROM log_acessos;
 ```
+
+```php
+php artisan route:list
+```
