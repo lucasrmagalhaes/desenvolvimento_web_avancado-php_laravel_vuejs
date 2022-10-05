@@ -693,3 +693,11 @@ TRUNCATE site_contatos;
 ```
 
 ---
+
+* [Middleware](https://laravel.com/docs/8.x/middleware)
+
+
+**Criando um middleware**
+```
+php artisan make:middleware LogAcessoMiddleware
+```
