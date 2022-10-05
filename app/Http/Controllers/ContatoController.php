@@ -22,7 +22,7 @@ class ContatoController extends Controller
 
     public function salvar(Request $request) {
         $request->validate([
-            'nome' => 'required|min:3|max:40',
+            'nome' => 'required|min:3|max:40|unique:site_contatos', // unique - nome da tabela
             'telefone' => 'required',
             'email' => 'email',
             'motivo_contatos_id' => 'required',
