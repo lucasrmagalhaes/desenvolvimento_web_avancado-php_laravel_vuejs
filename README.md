@@ -698,6 +698,20 @@ TRUNCATE site_contatos;
 
 
 **Criando um middleware**
-```
+```php
 php artisan make:middleware LogAcessoMiddleware
+```
+
+**Migration e Model de LogAcesso**
+```php
+php artisan make:model LogAcesso -m
+```
+
+```php
+php artisan migrate:status
+php artisan migrate
+```
+
+```
+SELECT * FROM log_acessos;
 ```
