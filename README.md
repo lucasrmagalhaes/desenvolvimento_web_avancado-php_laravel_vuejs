@@ -35,6 +35,16 @@ php --ini
 memory_limit = -1 
 ```
 
+**Modificando a versão do Composer**
+```
+composer --version
+composer --help
+
+C:\ProgramData\ComposerSetup\bin\
+
+Versão do curso: 1.10.7
+```
+
 * [Laravel](https://laravel.com)
 
 **Configuração para buscar os pacotes no packagist:**
