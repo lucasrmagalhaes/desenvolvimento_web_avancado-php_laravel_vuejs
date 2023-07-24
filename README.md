@@ -26,6 +26,15 @@ composer --version
 composer self-update
 ```
 
+**Configurando a memória limite do PHP**
+```
+php -r "echo ini_get('memory_limit');"
+php --ini
+
+-1 = Ilimitado
+memory_limit = -1 
+```
+
 * [Laravel](https://laravel.com)
 
 **Configuração para buscar os pacotes no packagist:**
