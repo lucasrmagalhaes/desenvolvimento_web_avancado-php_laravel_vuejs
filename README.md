@@ -16,7 +16,9 @@ Adicionar o caminho do diretório PHP no path das variáveis de ambiente <br>
 php.ini-development renomear para php.ini (Ambiente de Desenvolvimento)
 
 * [Composer](https://getcomposer.org/)
-Download - Windows Installer - Composer-Setup.exe
+- Download 
+    - Windows Installer 
+        - Composer-Setup.exe
 
 ```
 composer --version
