@@ -740,3 +740,9 @@ SELECT * FROM log_acessos;
 ```php
 php artisan route:list
 ```
+
+**Encadeamento de middlewares (criando um middleware de autenticação)**
+```php
+php artisan make:middleware AutenticacaoMiddleware
+```
+
