@@ -750,3 +750,8 @@ php artisan make:middleware AutenticacaoMiddleware
 ```php
 php artisan make:controller LoginController
 ```
+
+**Validando a existência do usuário e senha no Banco de Dados**
+```
+INSERT INTO users(name, email, password) values('Lucas', 'lucas@contato.com.br', '1234');
+```
