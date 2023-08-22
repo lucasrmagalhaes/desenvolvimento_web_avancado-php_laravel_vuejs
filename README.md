@@ -755,3 +755,16 @@ php artisan make:controller LoginController
 ```
 INSERT INTO users(name, email, password) values('Lucas', 'lucas@contato.com.br', '1234');
 ```
+
+**Implementando o menu de opções da área protegida da aplicação**
+```php
+php artisan make:controller HomeController
+```
+
+```php
+php artisan make:controller ClienteController
+```
+
+```php
+php artisan make:controller ProdutoController
+```
