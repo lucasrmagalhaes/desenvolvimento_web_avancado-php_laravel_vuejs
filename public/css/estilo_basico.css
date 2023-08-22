@@ -106,7 +106,7 @@ button:hover {
 .conteudo-destaque {
     width: 100%;
     height: 100%;
-    min-height: 800px; 
+    min-height: 800px;
 }
 
 .esquerda {
@@ -154,6 +154,13 @@ button:hover {
 
 .titulo-pagina {
     padding: 100px 0px 60px 0px;
+    background-color: #2a9ee2;
+    text-align: center;
+}
+
+.titulo-pagina-2 {
+    padding: 70px 0px 10px 0px;
+    margin-bottom: 10px;
     background-color: #2a9ee2;
     text-align: center;
 }
