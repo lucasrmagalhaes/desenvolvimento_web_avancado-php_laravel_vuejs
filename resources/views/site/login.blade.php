@@ -23,6 +23,8 @@
 
                     <button type="submit" class="borda-preta">Acessar</button>
                 </form>
+
+                {{ isset($erro) && !empty($erro) ? $erro : '' }}
             </div>
         </div>
     </div>
