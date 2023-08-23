@@ -774,3 +774,20 @@ php artisan make:controller ProdutoController
 Fornecedor::find($id)->delete();
 Fornecedor::find($id)->forceDelete(); // Ignora o soft delete
 ```
+
+**Controladores com resources**
+- index() -> Exibir lista de registros
+- create() -> Exibir formulário de criação de registro
+- store() -> Receber formulário de criação de registro
+- show() -> Exibir registro específico
+- edit() -> Exibir formulário de edição do registro
+- update() -> Receber formulário de edição do registro
+- destroy() -> Receber dados para remoção do registro
+
+
+```php
+php artisan make:controller --help
+
+php artisan make:controller --resource ProdutoController --model=Produto
+yes
+```
