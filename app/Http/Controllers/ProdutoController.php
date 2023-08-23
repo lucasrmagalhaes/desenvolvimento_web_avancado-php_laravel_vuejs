@@ -14,7 +14,7 @@ class ProdutoController extends Controller
      */
     public function index()
     {
-        //
+        echo 'Index';
     }
 
     /**
@@ -24,7 +24,7 @@ class ProdutoController extends Controller
      */
     public function create()
     {
-        //
+        echo  'Create';
     }
 
     /**

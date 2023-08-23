@@ -791,3 +791,8 @@ php artisan make:controller --help
 php artisan make:controller --resource ProdutoController --model=Produto
 yes
 ```
+
+**Criando rotas associadas aos resources de um controlador**
+```php
+php artisan route:list
+```
