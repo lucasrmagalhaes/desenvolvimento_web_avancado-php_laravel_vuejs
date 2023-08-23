@@ -768,3 +768,9 @@ php artisan make:controller ClienteController
 ```php
 php artisan make:controller ProdutoController
 ```
+
+**Implementando o cadastro de fornecedores parte 5 (remoção de registros)**
+```php
+Fornecedor::find($id)->delete();
+Fornecedor::find($id)->forceDelete(); // Ignora o soft delete
+```
