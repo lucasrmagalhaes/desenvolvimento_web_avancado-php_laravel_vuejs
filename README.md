@@ -715,13 +715,14 @@ TRUNCATE site_contatos;
 
 ---
 
+**Criando um middleware**
 * [Middleware](https://laravel.com/docs/8.x/middleware)
 
-
-**Criando um middleware**
 ```php
 php artisan make:middleware LogAcessoMiddleware
 ```
+
+---
 
 **Migration e Model de LogAcesso**
 ```php
@@ -741,20 +742,28 @@ SELECT * FROM log_acessos;
 php artisan route:list
 ```
 
+---
+
 **Encadeamento de middlewares (criando um middleware de autenticação)**
 ```php
 php artisan make:middleware AutenticacaoMiddleware
 ```
+
+---
 
 **Implementando o formulário de Login**
 ```php
 php artisan make:controller LoginController
 ```
 
+---
+
 **Validando a existência do usuário e senha no Banco de Dados**
 ```
 INSERT INTO users(name, email, password) values('Lucas', 'lucas@contato.com.br', '1234');
 ```
+
+---
 
 **Implementando o menu de opções da área protegida da aplicação**
 ```php
@@ -775,6 +784,8 @@ Fornecedor::find($id)->delete();
 Fornecedor::find($id)->forceDelete(); // Ignora o soft delete
 ```
 
+---
+
 **Controladores com resources**
 - index() -> Exibir lista de registros
 - create() -> Exibir formulário de criação de registro
@@ -792,7 +803,37 @@ php artisan make:controller --resource ProdutoController --model=Produto
 yes
 ```
 
+---
+
 **Criando rotas associadas aos resources de um controlador**
 ```php
 php artisan route:list
+```
+
+---
+
+**Implementando o cadastro de produtos parte 1 (index)**
+```php
+php artisan make:model Unidade
+```
+
+```php
+php artisan tinker
+```
+
+```
+use App\Unidade;
+```
+
+```
+Unidade::create(['unidade' => 'UN', 'descricao' => 'Unidade']);
+```
+
+```
+use App\Produto;
+```
+
+```
+Produto::create(['nome' => 'Geladeira', 'descricao' => 'Geladeira/Refrigerador', 'peso' => 60, 'unidade_id' => 1]);
+Produto::create(['nome' => 'TV', 'descricao' => 'Smart TV LED 42', 'peso' => 8, 'unidade_id' => 1]);
 ```
