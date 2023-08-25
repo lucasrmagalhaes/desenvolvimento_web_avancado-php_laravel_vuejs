@@ -40,7 +40,23 @@ class ProdutoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // Produto::create($request->all());
+
+        $nome = strtoupper($request->get('nome'));
+        $descricao = $request->get('descricao');
+        $peso = $request->get('peso');
+        $unidade_id = $request->get('unidade_id');
+
+        $produto = new Produto();
+
+        $produto->nome = $nome;
+        $produto->descricao = $descricao;
+        $produto->peso = $peso;
+        $produto->unidade_id = $unidade_id;
+
+        $produto->save();
+
+        return redirect()->route('produto.index');
     }
 
     /**
