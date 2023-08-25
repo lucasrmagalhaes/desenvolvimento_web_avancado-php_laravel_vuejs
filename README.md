@@ -837,3 +837,8 @@ use App\Produto;
 Produto::create(['nome' => 'Geladeira', 'descricao' => 'Geladeira/Refrigerador', 'peso' => 60, 'unidade_id' => 1]);
 Produto::create(['nome' => 'TV', 'descricao' => 'Smart TV LED 42', 'peso' => 8, 'unidade_id' => 1]);
 ```
+
+---
+
+**Implementando o cadastro de produtos parte 2 (create)**
+
