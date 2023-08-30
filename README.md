@@ -837,3 +837,14 @@ use App\Produto;
 Produto::create(['nome' => 'Geladeira', 'descricao' => 'Geladeira/Refrigerador', 'peso' => 60, 'unidade_id' => 1]);
 Produto::create(['nome' => 'TV', 'descricao' => 'Smart TV LED 42', 'peso' => 8, 'unidade_id' => 1]);
 ```
+
+---
+
+**Eloquent ORM 1 para 1 - Implementando produto detalhes parte 1**
+```php
+php artisan make:model ProdutoDetalhe
+```
+
+```php
+php artisan make:controller --resource ProdutoDetalheController
+```
